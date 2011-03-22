@@ -3,7 +3,7 @@
 # All right reserved.
 #
 
-export PATH=~/bin:/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=~/bin:/opt/local/bin:/opt/local/sbin:/usr/sbin/:$PATH
 
 #
 # A calculator thing that I enjoy...
