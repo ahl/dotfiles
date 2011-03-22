@@ -3,7 +3,16 @@
 # All right reserved.
 #
 
-export PATH=~/bin:/opt/local/bin:/opt/local/sbin:/usr/sbin/:$PATH
+PATH=/usr/sbin:$PATH
+
+case $(uname -s) in
+	SunOS)	PATH=/usr/local/bin:$PATH ;;
+	Darwin)	PATH=/opt/local/bin:/opt/local/sbin:$PATH ;;
+esac
+
+PATH=~/bin:$PATH
+
+export PATH
 
 #
 # A calculator thing that I enjoy...
@@ -13,6 +22,9 @@ function =
 	echo $* | tr , \\012 | bc -l
 }
 
+#
+# Find the root of our git repository.
+#
 function _githead
 {
 	local dir=$PWD
@@ -42,6 +54,10 @@ function githead
 	cd $dir
 }
 
+#
+# Function that is invoked every time we print the prompt. This is where we can
+# do lightweight checks and update environment variables.
+#
 function pre_prompt
 {
 	GITHEAD=$(_githead) && export GITHEAD || unset GITHEAD
