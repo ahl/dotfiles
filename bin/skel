@@ -1,0 +1,87 @@
+#!/bin/sh
+
+#
+#   FILE: skel.sh
+# AUTHOR: Mike Shapiro (mws)
+#  DESCR: Generate source file skeletons (activate by ~/.vimrc).  This version
+#         of skel follows the Sun coding standards, and generates C templates
+#         which are cstyle -p clean, and C header files which are cstyle -p
+#         clean and hdrchk clean.  Generated files are also keywords and
+#         wx copyright clean.
+#
+
+c_skel () {
+	echo "\
+/*
+ * Copyright `date '+%Y'` by Delphix.
+ * All rights reserved.
+ */"
+}
+
+h_skel () {
+	ID=_$(echo $FILE | tr '[a-z]' '[A-Z]' | tr '.-' '__')
+	echo "\
+/*
+ * Copyright `date '+%Y'` by Delphix.
+ * All rights reserved.
+ */
+\n\
+#ifndef\t$ID
+#define\t$ID
+
+#ifdef\t__cplusplus
+extern \"C\" {
+#endif
+
+
+
+#ifdef\t__cplusplus
+}
+#endif
+
+#endif\t/* $ID */"
+}
+
+shell_skel () {
+	echo "\
+#!$*
+#
+# Copyright `date '+%Y'` by Delphix.
+# All rights reserved.
+#"
+}
+
+make_skel () {
+	echo "\
+#
+# Copyright `date '+%Y'` by Delphix.
+# All rights reserved.
+#"
+}
+
+lint_skel () {
+	echo "\
+/*LINTLIBRARY*/
+/*PROTOLIB1*/"
+	c_skel
+}
+
+if [ $# -ne 1 ]; then
+	echo "Usage: `basename $0` filename" >& 2
+	exit 2
+fi
+
+FILE=`basename $1`
+case "$FILE" in
+      [mM]akefile) make_skel ;;
+    [mM]akefile.*) make_skel ;;
+          llib-l*) lint_skel ;;
+*.c|*.cc|*.s|*.il) c_skel ;;
+              *.h) h_skel ;;
+             *.pl) shell_skel /bin/perl ;;
+             *.sh) shell_skel /bin/bash ;;
+            *.ksh) shell_skel /bin/ksh -p ;;
+            *.csh) echo You are programming in the wrong language ;;
+esac
+
+exit 0
