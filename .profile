@@ -5,14 +5,11 @@
 
 PATH=/usr/sbin:$PATH
 
-case $(uname -s) in
-	SunOS)	PATH=/usr/local/bin:$PATH ;;
-	Darwin)	PATH=/opt/local/bin:/opt/local/sbin:$PATH ;;
-esac
+[[ -f ~/.profile.local ]] && . ~/.profile.local
 
-PATH=~/bin:$PATH
+PATH=~/bin:/usr/local/bin:$PATH
 
-export PATH
+export PAGER=less
 
 #
 # A calculator thing that I enjoy...
@@ -62,7 +59,6 @@ function pre_prompt
 {
 	GITHEAD=$(_githead) && export GITHEAD || unset GITHEAD
 }
-
 
 PROMPT_COMMAND=pre_prompt
 
