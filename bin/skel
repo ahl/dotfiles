@@ -22,7 +22,7 @@ h_skel () {
 	ID=_$(echo $FILE | tr '[a-z]' '[A-Z]' | tr '.-' '__')
 	echo "\
 /*
- * Copyright `date '+%Y'` by Delphix.
+ * Copyright (c) `date '+%Y'` by Delphix.
  * All rights reserved.
  */
 \n\

@@ -31,7 +31,7 @@ function _githead
 			return 1
 		fi
 
-		dir=$(dirname $dir)
+		dir=$(dirname "$dir")
 	done
 
 	echo $dir

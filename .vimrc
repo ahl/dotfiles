@@ -20,8 +20,8 @@ set magic
 " Do not interpret modeline directives in files we open (more secure)
 set nomodeline
 
-" Wrap automatically at 80 characters
-set textwidth=80
+" Wrap automatically at 78 characters (80 less a couple of characters)
+set textwidth=78
 
 " Show matching (), {}, [] pairs
 set showmatch
