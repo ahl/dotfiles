@@ -13,7 +13,7 @@
 c_skel () {
 	echo "\
 /*
- * Copyright `date '+%Y'` by Delphix.
+ * Copyright (c) `date '+%Y'` by Delphix.
  * All rights reserved.
  */"
 }
@@ -46,7 +46,7 @@ shell_skel () {
 	echo "\
 #!$*
 #
-# Copyright `date '+%Y'` by Delphix.
+# Copyright (c) `date '+%Y'` by Delphix.
 # All rights reserved.
 #"
 }
@@ -54,7 +54,7 @@ shell_skel () {
 make_skel () {
 	echo "\
 #
-# Copyright `date '+%Y'` by Delphix.
+# Copyright (c) `date '+%Y'` by Delphix.
 # All rights reserved.
 #"
 }
