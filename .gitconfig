@@ -1,0 +1,12 @@
+[user]
+	name = Adam H. Leventhal
+	email = ahl@delphix.com
+[branch]
+	autosetuprebase = always
+[reviewboard]
+	url = http://reviews.delphix.com/
+[core]
+	excludesfile = ~/.gitignore.global
+	pager = cat
+[alias]
+	outgoing = ! git log --name-status $(git merge-base HEAD origin/master)..HEAD
