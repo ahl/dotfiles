@@ -46,7 +46,7 @@ autocmd BufEnter Makefile,makefile set textwidth=0
 autocmd BufLeave Makefile,makefile set textwidth=80
 
 " Activate our skeleton generator whenever we open a new source file
-autocmd BufNewFile Makefile,makefile,Makefile.*,llib-l*,*.cc,*.c,*.h,*.il,*.s,*.pl,*.sh,*.ksh 1,$!~/bin/skel <afile>
+autocmd BufNewFile Makefile,makefile,Makefile.*,llib-l*,*.cc,*.c,*.h,*.il,*.s,*.pl,*.sh,*.ksh,*.java 1,$!~/bin/skel <afile>
 
 " Buffer list shortcuts
 nmap [b :buffers<C-m>:buffer
