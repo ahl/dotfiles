@@ -16,39 +16,30 @@ export PAGER=less
 #
 function =
 {
-	echo $* | tr , \\012 | bc -l
+	echo $* | tr , \\012 | tr x '*' | bc -l
 }
 
-#
-# Find the root of our git repository.
-#
-function _githead
+function _git_complete
 {
-	local dir=$PWD
+	local githome=$(which git)
+	local gitcore=${githome%/bin/git}/libexec/git-core
+	local cur="${COMP_WORDS[COMP_CWORD]}"
+	local prev="${COMP_WORDS[COMP_CWORD-1]}"
+	local opts
 
-	while [[ ! -d "$dir/.git" ]]; do
-		if [[ "$dir" = "/" ]]; then
-			return 1
-		fi
+	COMPREPLY=()
 
-		dir=$(dirname "$dir")
-	done
-
-	echo $dir
-}
-
-function githead
-{
-	local dir
-
-	dir=$(_githead)
-
-	if [[ $? -ne 0 ]]; then
-		echo "You are not in a git repository"
-		return 1
-	fi
-
-	cd $dir
+	# XXX account for flags
+	case $prev in
+	git)
+		COMPREPLY=( $(/bin/ls -1 $gitcore/git-$cur* | \
+		    sed -n 's/.*git-\(.*\)/\1/p' | grep -v -- --) )
+		;;
+	commit)
+		opts="-a -m --all --reset-author"
+		COMPREPLY=( $(compgen -W "$opts" -- $cur) )
+		;;
+	esac
 }
 
 #
@@ -57,14 +48,19 @@ function githead
 #
 function pre_prompt
 {
-	GITHEAD=$(_githead) && export GITHEAD || unset GITHEAD
+	GITHEAD=$(git rev-parse --show-toplevel 2>/dev/null) && \
+	    export GITHEAD || unset GITHEAD
 }
 
 PROMPT_COMMAND=pre_prompt
 
 PS1='\[\e[7m\]\h\[\e[0m\e[1m\] ${PWD} \[\e[0m\]\$ '
 
+# complete -F _git_complete git
+
 alias ls='ls -F'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+
+alias githead='cd $(git rev-parse --show-toplevel)'
