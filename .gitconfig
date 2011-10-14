@@ -1,8 +1,6 @@
 [user]
 	name = Adam H. Leventhal
 	email = ahl@delphix.com
-[branch]
-	autosetuprebase = always
 [reviewboard]
 	url = http://reviews.delphix.com/
 [core]
