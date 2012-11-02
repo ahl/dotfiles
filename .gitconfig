@@ -8,3 +8,8 @@
 	pager = cat
 [alias]
 	outgoing = ! git log --name-status $(git merge-base HEAD origin/master)..HEAD
+
+[color]
+	ui = auto
+[push]
+	default = tracking
