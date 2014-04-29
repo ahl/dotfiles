@@ -13,3 +13,5 @@
 	ui = auto
 [push]
 	default = tracking
+[branch]
+	autosetupmerge = always

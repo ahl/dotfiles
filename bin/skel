@@ -13,16 +13,14 @@
 c_skel () {
 	echo "\
 /*
- * Copyright (c) `date '+%Y'` by Delphix.
- * All rights reserved.
+ * Copyright (c) `date '+%Y'` by Delphix. All rights reserved.
  */"
 }
 
 java_skel () {
 	echo "\
 /**
- * Copyright (c) `date '+%Y'` by Delphix.
- * All rights reserved.
+ * Copyright (c) `date '+%Y'` by Delphix. All rights reserved.
  */"
 }
 
@@ -30,8 +28,7 @@ h_skel () {
 	ID=_$(echo $FILE | tr '[a-z]' '[A-Z]' | tr '.-' '__')
 	echo "\
 /*
- * Copyright (c) `date '+%Y'` by Delphix.
- * All rights reserved.
+ * Copyright (c) `date '+%Y'` by Delphix. All rights reserved.
  */
 \n\
 #ifndef\t$ID
@@ -54,16 +51,14 @@ shell_skel () {
 	echo "\
 #!$*
 #
-# Copyright (c) `date '+%Y'` by Delphix.
-# All rights reserved.
+# Copyright (c) `date '+%Y'` by Delphix. All rights reserved.
 #"
 }
 
 make_skel () {
 	echo "\
 #
-# Copyright (c) `date '+%Y'` by Delphix.
-# All rights reserved.
+# Copyright (c) `date '+%Y'` by Delphix. All rights reserved.
 #"
 }
 
