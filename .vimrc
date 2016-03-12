@@ -54,3 +54,5 @@ nmap [d :buffers<C-m>:bdelete
 
 " Abbreviate wq to w so I don't accidentally quit (bad habit from vi)
 " abbr wq w
+
+autocmd BufNewFile,BufRead *.d setf dtrace

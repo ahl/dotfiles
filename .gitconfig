@@ -15,3 +15,5 @@
 	default = tracking
 [branch]
 	autosetupmerge = always
+[credential]
+	helper = osxkeychain
