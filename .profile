@@ -1,6 +1,5 @@
 #
-# Copyright (c) 2011 by Adam Leventhal.
-# All right reserved.
+# Copyright (c) 2011, 2016, Adam Leventhal. All right reserved.
 #
 
 PATH=/usr/sbin:$PATH
@@ -64,3 +63,6 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 alias githead='cd $(git rev-parse --show-toplevel)'
+
+export GO15VENDOREXPERIMENT=1
+export GOPATH=~/src/noms
