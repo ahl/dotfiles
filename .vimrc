@@ -1,9 +1,6 @@
 "
-" Copyright (c) 2011 by Adam Leventhal.
+" Copyright (c) 2011, 2016 Adam H. Leventhal
 "
-
-" Some old version
-version 4.6
 
 " Write on buffer switch, write backup files to *.org files
 set autowrite backup backupext=.org
@@ -22,6 +19,7 @@ set nomodeline
 
 " Wrap automatically at 78 characters (80 less a couple of characters)
 set textwidth=78
+autocmd FileType go setlocal textwidth=130
 
 " Show matching (), {}, [] pairs
 set showmatch
@@ -34,25 +32,53 @@ set cinkeys=0{,0},:,0#,!0<Tab>,!^F
 set cinoptions=p0,t0,+4,(4
 
 " Activate C indenting and comment formatting when editing C or C++
-autocmd BufEnter *.cc,*.c,*.h set fo=croq cindent comments=sr:/*,mb:*,el:*/
-autocmd BufLeave *.cc,*.c,*.h set fo=tcql nocindent comments&
+"autocmd BufEnter *.cc,*.c,*.h set fo=croq cindent comments=sr:/*,mb:*,el:*/
+"autocmd BufLeave *.cc,*.c,*.h set fo=tcql nocindent comments&
 
 " Activate C comment formatting only when editing assembly
-autocmd BufEnter *.il,*.s set fo=croq comments=sr:/*,mb:*,el:*/
-autocmd BufLeave *.il,*.s set fo=tcql comments&
+"autocmd BufEnter *.il,*.s set fo=croq comments=sr:/*,mb:*,el:*/
+"autocmd BufLeave *.il,*.s set fo=tcql comments&
 
 " De-activate line wrapping when editing Makefiles
-autocmd BufEnter Makefile,makefile set textwidth=0
-autocmd BufLeave Makefile,makefile set textwidth=80
+"autocmd BufEnter Makefile,makefile set textwidth=0
+"autocmd BufLeave Makefile,makefile set textwidth=80
 
 " Activate our skeleton generator whenever we open a new source file
-autocmd BufNewFile Makefile,makefile,Makefile.*,llib-l*,*.cc,*.c,*.h,*.il,*.s,*.pl,*.sh,*.ksh,*.java 1,$!~/bin/skel <afile>
+"autocmd BufNewFile Makefile,makefile,Makefile.*,llib-l*,*.cc,*.c,*.h,*.il,*.s,*.pl,*.sh,*.ksh,*.java 1,$!~/bin/skel <afile>
 
 " Buffer list shortcuts
-nmap [b :buffers<C-m>:buffer
-nmap [d :buffers<C-m>:bdelete
+"nmap [b :buffers<C-m>:buffer
+"nmap [d :buffers<C-m>:bdelete
 
-" Abbreviate wq to w so I don't accidentally quit (bad habit from vi)
-" abbr wq w
+" autocmd BufNewFile,BufRead *.d setf dtrace
 
-autocmd BufNewFile,BufRead *.d setf dtrace
+" For me .sh means bash
+let g:is_bash=1
+
+syntax on
+colorscheme blues
+
+" Use pathogen as our plugin manager
+execute pathogen#infect()
+
+" generate help for all modules
+Helptags
+
+filetype plugin indent on
+
+" toggle the tagbar
+nmap , :TagbarToggle<CR>
+
+" neocomplete for fancy completion
+let g:neocomplete#enable_at_startup = 1
+" use the menu for completions, not the window
+set completeopt-=preview
+
+" attempt at smart wrap
+set breakindent
+set breakindentopt=shift:4
+set linebreak
+
+" set shiftwidth=2
+" set tabstop=2
+" set expandtab

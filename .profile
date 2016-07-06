@@ -6,7 +6,10 @@ PATH=/usr/sbin:$PATH
 
 [[ -f ~/.profile.local ]] && . ~/.profile.local
 
-PATH=~/bin:/usr/local/bin:$PATH
+# export GO15VENDOREXPERIMENT=1 # don't think I need this any more
+export GOPATH=~/gosrc
+
+PATH=~/bin:/usr/local/bin:$GOPATH/bin:$PATH
 
 export PAGER=less
 
@@ -51,11 +54,11 @@ function pre_prompt
 	    export GITHEAD || unset GITHEAD
 }
 
-PROMPT_COMMAND=pre_prompt
+#PROMPT_COMMAND=pre_prompt
 
 PS1='\[\e[7m\]\h\[\e[0m\e[1m\] ${PWD} \[\e[0m\]\$ '
 
-# complete -F _git_complete git
+#complete -F _git_complete git
 
 alias ls='ls -F'
 alias rm='rm -i'
@@ -63,6 +66,3 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 alias githead='cd $(git rev-parse --show-toplevel)'
-
-export GO15VENDOREXPERIMENT=1
-export GOPATH=~/src/noms

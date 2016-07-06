@@ -1,6 +1,7 @@
 [user]
 	name = Adam H. Leventhal
 	email = ahl@alumni.brown.edu
+	#email = adam.leventhal@gmail.com
 [reviewboard]
 	url = http://reviews.delphix.com/
 [core]
