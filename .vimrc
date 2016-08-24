@@ -74,11 +74,17 @@ let g:neocomplete#enable_at_startup = 1
 " use the menu for completions, not the window
 set completeopt-=preview
 
+" use goimports instead of gofmt (superset but slower)
+" let g:go_fmt_command = "goimports"
+
 " attempt at smart wrap
 set breakindent
 set breakindentopt=shift:4
 set linebreak
 
-" set shiftwidth=2
-" set tabstop=2
-" set expandtab
+autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+
+let g:javascript_plugin_flow = 1
+
+" use JSX syntax hilighting by default.
+let g:jsx_ext_required = 0
