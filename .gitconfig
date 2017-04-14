@@ -1,12 +1,11 @@
 [user]
 	name = Adam H. Leventhal
-	email = ahl@alumni.brown.edu
+	email = ahl@transposit.com
+	#email = ahl@alumni.brown.edu
 	#email = adam.leventhal@gmail.com
-[reviewboard]
-	url = http://reviews.delphix.com/
 [core]
 	excludesfile = ~/.gitignore.global
-	pager = cat
+	#pager = cat
 [alias]
 	outgoing = ! git log --name-status $(git merge-base HEAD origin/master)..HEAD
 

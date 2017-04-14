@@ -84,6 +84,8 @@ set linebreak
 
 autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
+autocmd Filetype tf setlocal expandtab tabstop=2
+
 let g:javascript_plugin_flow = 1
 
 " use JSX syntax hilighting by default.
