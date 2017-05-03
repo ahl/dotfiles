@@ -83,6 +83,8 @@ set breakindentopt=shift:4
 set linebreak
 
 autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype json setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype html setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 autocmd Filetype tf setlocal expandtab tabstop=2
 
