@@ -66,3 +66,9 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 alias githead='cd $(git rev-parse --show-toplevel)'
+
+# Color less
+export LESS=RFX
+
+# Color jq
+alias jq='jq -C'
