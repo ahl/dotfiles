@@ -86,6 +86,7 @@ autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabsto
 autocmd Filetype json setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype html setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype yaml setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype java setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2 ignorecase smartcase
 
 autocmd Filetype tf setlocal expandtab tabstop=2
 
@@ -93,3 +94,7 @@ let g:javascript_plugin_flow = 1
 
 " use JSX syntax hilighting by default.
 let g:jsx_ext_required = 0
+
+" vim-terraform
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
