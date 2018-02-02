@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2011, 2016, Adam Leventhal. All right reserved.
+# Copyright 2011, 2017 Adam Leventhal. All right reserved.
 #
 
 PATH=/usr/sbin:$PATH
@@ -72,3 +72,7 @@ export LESS=RFX
 
 # Color jq
 alias jq='jq -C'
+
+function aws-profile {
+	export AWS_PROFILE=$1
+}
