@@ -69,8 +69,6 @@ filetype plugin indent on
 " toggle the tagbar
 nmap , :TagbarToggle<CR>
 
-" neocomplete for fancy completion
-let g:neocomplete#enable_at_startup = 1
 " use the menu for completions, not the window
 set completeopt-=preview
 
