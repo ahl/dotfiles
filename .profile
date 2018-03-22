@@ -65,6 +65,9 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
+alias rmorg='/bin/rm *.org'
+alias rrmorg='find . -name \*.org | xargs rm'
+
 alias githead='cd $(git rev-parse --show-toplevel)'
 
 # Color less
