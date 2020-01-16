@@ -1,8 +1,7 @@
 [user]
 	name = Adam H. Leventhal
-	email = ahl@transposit.com
+	email = adam.leventhal@gmail.com
 	#email = ahl@alumni.brown.edu
-	#email = adam.leventhal@gmail.com
 [core]
 	excludesfile = ~/.gitignore.global
 	#pager = cat

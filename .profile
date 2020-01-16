@@ -79,3 +79,5 @@ alias jq='jq -C'
 function aws-profile {
 	export AWS_PROFILE=$1
 }
+
+export PATH="$HOME/.cargo/bin:$PATH"
