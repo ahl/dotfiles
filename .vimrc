@@ -98,5 +98,17 @@ let g:jsx_ext_required = 0
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
 
-
+" rust.vim
 let g:rustfmt_autosave = 1
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+
