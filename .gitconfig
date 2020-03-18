@@ -1,7 +1,9 @@
 [user]
 	name = Adam H. Leventhal
-	email = adam.leventhal@gmail.com
+	#email = adam.leventhal@gmail.com
 	#email = ahl@alumni.brown.edu
+        email = ahl@oxide.computer
+
 [core]
 	excludesfile = ~/.gitignore.global
 	#pager = cat
