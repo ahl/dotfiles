@@ -2,3 +2,6 @@
 *.class
 *.jar
 *.war
+*.swp
+*.code-workspace
+.vscode
