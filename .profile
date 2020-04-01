@@ -4,12 +4,13 @@
 
 PATH=/usr/sbin:$PATH
 
-[[ -f ~/.profile.local ]] && . ~/.profile.local
-
 # export GO15VENDOREXPERIMENT=1 # don't think I need this any more
 export GOPATH=~/gosrc
 
 PATH=~/bin:/usr/local/bin:$GOPATH/bin:$PATH
+
+[[ -f ~/.profile.local ]] && . ~/.profile.local
+
 
 export PAGER=less
 
