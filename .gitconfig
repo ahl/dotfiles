@@ -16,8 +16,10 @@
 	default = tracking
 [branch]
 	autosetupmerge = always
-[credential "https://git-codecommit.us-west-2.amazonaws.com"]
-	helper = !aws codecommit credential-helper $@
-	UseHttpPath = true
+#[credential "https://git-codecommit.us-west-2.amazonaws.com"]
+	#helper = !aws codecommit credential-helper $@
+	#UseHttpPath = true
 [credential]
 	helper = osxkeychain
+[pull]
+	rebase = false
