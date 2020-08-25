@@ -6,3 +6,4 @@
 *.code-workspace
 #.vscode
 .DS_Store
+.terraform
