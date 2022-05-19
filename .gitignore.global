@@ -5,5 +5,5 @@
 *.swp
 *.code-workspace
 #.vscode
-.DS_Store
+**/.DS_Store
 .terraform

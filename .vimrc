@@ -87,7 +87,7 @@ autocmd Filetype yaml setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype java setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2 ignorecase smartcase
 autocmd Filetype markdown setlocal textwidth=80
 
-autocmd Filetype tf setlocal expandtab tabstop=2
+autocmd Filetype tf setlocal expandtab tabstop=2 softtabstop=2
 
 let g:javascript_plugin_flow = 1
 

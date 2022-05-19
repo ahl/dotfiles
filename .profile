@@ -55,3 +55,4 @@ alias jq='jq -C'
 function aws-profile {
 	export AWS_PROFILE=$1
 }
+. "$HOME/.cargo/env"

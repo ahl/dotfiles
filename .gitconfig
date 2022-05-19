@@ -6,14 +6,24 @@
 
 [core]
 	excludesfile = ~/.gitignore.global
-	#pager = cat
+[pager]
+	log = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
+	show = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
+	diff = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
 [alias]
 	outgoing = ! git log --name-status $(git merge-base HEAD origin/master)..HEAD
 
 [color]
-	ui = auto
-[push]
-	default = tracking
+	ui = always
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+
+#[push]
+	#default = tracking
 [branch]
 	autosetupmerge = always
 #[credential "https://git-codecommit.us-west-2.amazonaws.com"]
