@@ -7,7 +7,7 @@ PATH=/usr/sbin:$PATH
 # export GO15VENDOREXPERIMENT=1 # don't think I need this any more
 export GOPATH=~/gosrc
 
-PATH=~/bin:/usr/local/bin:$GOPATH/bin:$PATH
+PATH=~/bin:$GOPATH/bin:$PATH
 
 [[ -f ~/.profile.local ]] && . ~/.profile.local
 
@@ -56,3 +56,7 @@ function aws-profile {
 	export AWS_PROFILE=$1
 }
 . "$HOME/.cargo/env"
+
+if command -v rustc >/dev/null 2>&1; then
+	source "$(rustc --print sysroot)"/etc/bash_completion.d/cargo
+fi
